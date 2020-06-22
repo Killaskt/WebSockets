@@ -7,3 +7,5 @@ Using the websocket nodejs library to test out some socket features such as:
 - handshake
 - sending data
 - connection eventemitter names
+
+Thinking of switching to the 'ws' library instead but still testing.
