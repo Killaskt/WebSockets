@@ -22,7 +22,7 @@ websocket.on('request', req => {
     connection.send(`Payload: ${bidHistory}`)
     connection.on('closed', e => console.log('connection has closed'))
     connection.on('message', e => console.log(`Recieved message ${e.utf8Data}`))
-    connection.on('yolo', e => console.log(`Recieved message ${e.utf8Data}`))
+    // connection.on('yolo', e => console.log(`Recieved yolo message ${e.utf8Data}`))
 })
 
 
