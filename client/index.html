@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>socket test</title>
+</head>
+<body>
+    <h2>Socket Test</h2>
+    <button onclick="estSocket()">Click to establish connection</button>
+    <div class="bid"></div>
+
+    <script>
+
+        let ws = new WebSocket('ws://localhost:3005');
+        
+        ws.onopen= e => ws.send('HELLOOO WORRLD')
+
+        ws.onmessage = m => {
+            console.log(m)
+            document.querySelector('div').append(m.data)
+        }
+
+        const estSocket = () => {
+            setTimeout(() => {
+                ws.send('hello')
+                ws.send('yolo543', 'yolo')
+                document.querySelector('div').append(`sent message to server`)
+            }, 5000)
+            
+        }
+    </script>
+</body>
+</html>
